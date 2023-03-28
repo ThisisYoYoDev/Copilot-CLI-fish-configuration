@@ -2,8 +2,6 @@
 Here is this little script to help you configure copilot cli on fish
 
 ```sh
-# Fish configuration for Copilot-CLI
-
 set copilot_cli_path (which github-copilot-cli)
 
 # check if copilot is installed
@@ -12,7 +10,7 @@ if test -z "$copilot_cli_path"
   exit 1
 end
 
-function copilot_what-the-shell
+function copilot_what-the-shell --description 'Copilot CLI: What the shell ?'
   set TMPFILE (mktemp)
   trap 'rm -f $TMPFILE' EXIT;
 
@@ -31,8 +29,7 @@ function copilot_what-the-shell
 
 end
 
-
-function copilot_git-assist
+function copilot_git-assist --description 'Copilot CLI: Git assist'
   set TMPFILE (mktemp)
   trap 'rm -f $TMPFILE' EXIT;
 
@@ -51,8 +48,7 @@ function copilot_git-assist
 
 end
 
-
-function copilot_gh-assist
+function copilot_gh-assist --description 'Copilot CLI: Github assist'
   set TMPFILE (mktemp)
   trap 'rm -f $TMPFILE' EXIT;
   if $copilot_cli_path gh-assist "$argv" --shellout $TMPFILE
