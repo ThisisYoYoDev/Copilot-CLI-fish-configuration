@@ -72,9 +72,9 @@ alias 'wts'='copilot_what-the-shell';
 ```
 
 For the moment it does not support the wildcard for:\
-git? who becomes git?\
-gh? which becomes gh?\
-?? works correctly\
+git? who becomes git\\?\
+gh? which becomes gh\\?\
+?? works correctly
 
 
 ## How to install it ?
