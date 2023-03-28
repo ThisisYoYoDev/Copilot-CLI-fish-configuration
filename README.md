@@ -2,6 +2,8 @@
 Here is this little script to help you configure copilot cli on fish
 
 ```sh
+# Fish configuration for Copilot-CLI
+
 set copilot_cli_path (which github-copilot-cli)
 
 # check if copilot is installed
