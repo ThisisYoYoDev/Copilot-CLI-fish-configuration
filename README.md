@@ -2,10 +2,6 @@
 
 This repository contains a script to help you configure the Copilot CLI on fish, a user-friendly shell for UNIX-like operating systems.
 
-## What is Copilot CLI ?
-
-Copilot CLI is a command-line interface tool developed by GitHub. It uses OpenAI's GPT model to help generate code snippets for developers. The tool assists in coding tasks, including suggesting lines of code, auto-completing comments, and providing functions and classes.
-
 ## How to use this configuration?
 This repository provides a simple configuration script that includes aliases for some of Copilot's commands. The script adds aliases for `what-the-shell`, `git-assist`, and `gh-assist` commands. 
 
