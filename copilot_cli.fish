@@ -63,7 +63,7 @@ function copilot_gh-assist --description 'Copilot CLI: Github assist'
   end
 end
 
-alias '??'='copilot_what-the-shell';
-alias "git\?"='copilot_git-assist';
-alias 'gh\?'='copilot_gh-assist';
+alias '!!'='copilot_what-the-shell';
+alias "git!"='copilot_git-assist';
+alias 'gh!'='copilot_gh-assist';
 alias 'wts'='copilot_what-the-shell';
