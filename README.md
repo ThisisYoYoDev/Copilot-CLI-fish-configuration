@@ -1,7 +1,7 @@
 # Copilot-CLI-fish-configuration
 Here is this little script to help you configure copilot cli on fish
 
-```sh
+```bash
 # Aliases for what-the-shell
 alias '!!'='copilot_what-the-shell';
 alias 'wts'='copilot_what-the-shell';
@@ -23,8 +23,8 @@ Just put the configuration in `~/.config/fish/config.fish`
 
 ## One line install
 
-```sh
-curl https://raw.githubusercontent.com/ThisisYoYoDev/Copilot-CLI-fish-configuration/main/copilot_cli.fish >> ~/.config/fish/config.fish
+```bash
+curl https://raw.githubusercontent.com/ThisisYoYoDev/Copilot-CLI-fish-configuration/main/copilot_cli.fish >> $__fish_config_dir/config.fish
 ```
 
 Then re-open your terminal and enjoy 🎊
