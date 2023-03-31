@@ -17,7 +17,7 @@ Just put the configuration in `~/.config/fish/config.fish`
 ## One line install
 
 ```sh
-curl https://raw.githubusercontent.com/ThisisYoYoDev/Copilot-CLI-fish-configuration/f741dfca21822419a9c344d7ec9516465f7bac5a/copilot_cli.fish >> ~/.config/fish/config.fish
+curl https://raw.githubusercontent.com/ThisisYoYoDev/Copilot-CLI-fish-configuration/main/copilot_cli.fish >> ~/.config/fish/config.fish
 ```
 
 Then re-open your terminal and enjoy 🎊

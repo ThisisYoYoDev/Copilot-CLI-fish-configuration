@@ -1,3 +1,4 @@
+
 # Fish configuration for Copilot-CLI
 
 set copilot_cli_path (which github-copilot-cli)
