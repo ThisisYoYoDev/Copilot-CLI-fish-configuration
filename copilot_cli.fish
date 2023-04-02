@@ -1,3 +1,5 @@
+# Copilot CLI
+
 # Fish configuration for Copilot-CLI
 
 set copilot_cli_path (which github-copilot-cli)
@@ -38,3 +40,40 @@ alias 'ga'='copilot_assist git-assist'
 # Aliases for gh-assist
 alias 'gh!'='copilot_assist gh-assist'
 alias 'gha'='copilot_assist gh-assist'
+
+
+function add_history_entry --description 'Add history entry'
+  begin
+    flock 1
+    and echo -- '- cmd:' (
+      string replace -- \n \\n (string join ' ' $argv) | string replace \\ \\\\
+    )
+    and date +'  when: %s'
+  end >> $__fish_user_data_dir/fish_history
+  and history merge
+end
+
+# Thanks to Cody Tubbs for this part <3
+set copilot_regex_wildcard_wts '^(?<tag>#?\?\?\s?)(?<copilot_cmd_string>.*)'
+set copilot_regex_wildcard_git '^(?<tag>#?git\?\s?)(?<copilot_cmd_string>.*)'
+set copilot_regex_wildcard_gh '^(?<tag>#?gh\?\s?)(?<copilot_cmd_string>.*)'
+
+function hook_exit --on-event fish_exit --description 'Copilot CLI: Exit hook'
+  if string match -raq $copilot_regex_wildcard_wts $history[1] or \
+    string match -raq $copilot_regex_wildcard_git $history[1] or \
+    string match -raq $copilot_regex_wildcard_gh $history[1]
+     add_history_entry 'block copilot on startup'
+ end
+end
+
+function hook_cli --on-event fish_prompt --description 'Copilot CLI: Hook'
+  if string match -raq $copilot_regex_wildcard_wts $history[1]
+    copilot_assist what-the-shell "$copilot_cmd_string"
+  end
+  if string match -raq $copilot_regex_wildcard_git $history[1]
+    copilot_assist git-assist "$copilot_cmd_string"
+  end
+  if string match -raq $copilot_regex_wildcard_gh $history[1]
+    copilot_assist gh-assist "$copilot_cmd_string"
+  end
+end

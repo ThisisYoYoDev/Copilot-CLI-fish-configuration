@@ -18,10 +18,13 @@ Once you have installed the script, you can start using the aliases for `what-th
 
 | Alias | Command |
 | --- | --- |
+| `??` | `what-the-shell` |
 | `!!` | `what-the-shell` |
 | `wts` | `what-the-shell` |
+| `git?` | `git-assist` |
 | `git!` | `git-assist` |
 | `ga` | `git-assist` |
+| `gh?` | `gh-assist` |
 | `gh!` | `gh-assist` |
 | `gha` | `gh-assist` |
 
